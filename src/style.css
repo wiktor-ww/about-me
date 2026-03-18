@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Intel;
+
+    src: url("/fonts/intel/IntelOneMono-Regular.woff2"), format("woff2");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: Intel;
+    font-weight: bold;
+    src: url("/fonts/intel/IntelOneMono-Bold.woff2");
+    font-weight: normal;
+    font-weight: bold;
+}
+
+body {
+    line-height: 1.618;
+    font-family: Intel;
+    font-display: swap;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    transition: 0.5s ease-in-out;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #805ad5;
+    transition: 0.3s ease-in-out;
+    text-decoration: underline;
+}
+
+::selection {
+    background-color: #805ad5; /* Kolor tła zaznaczenia */
+    color: #ffffff; /* Kolor tekstu podczas zaznaczenia */
+}
