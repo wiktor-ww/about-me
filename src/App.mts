@@ -1,10 +1,8 @@
-const { default: cyber } = await import("/icons/cyberrealmrefer.gif");
 const { default: html } = await import("/icons/htmldream.gif");
-const { default: textfile } = await import("/icons/textfile.gif");
 const { default: loveHome } = await import("/icons/love-home.gif");
 
 function App(): string {
-  return /* html */ `
+    return /* html */ `
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-3xl mx-auto">
               <div class="grid grid-cols-1 md:grid-cols-4 gap-[15vw] mt-20">
@@ -19,10 +17,10 @@ function App(): string {
                     </ul>
                 </div>
                 <div class="col-span-3 mt-6 sm:mt-0 mb-6 text-pretty">
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                        officia deserunt mollit anim id est laborum.
+                    <p> I'm a self-taught developer who loves building websites. I have advanced skills in HTML, CSS, and TailwindCSS.
+                        My favorite way to work is using pure TypeScript and JavaScript to build and render entire sites.
+                        <br /><br />
+                        I also have basic experience with React. Programming is my main interest.
                     </p>
                 </div>
               </div>

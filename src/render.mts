@@ -1,14 +1,14 @@
 import App from "./App.mts";
 import "./style.css";
 
-const { default: Tippy } = await import("./tippy.mts");
+const { default: MouseHover } = await import("./util.mts");
 
 function Render() {
-  let page = document.querySelector<HTMLDivElement>("#app");
-  let app = App();
+    let page = document.querySelector<HTMLDivElement>("#app");
+    let app = App();
 
-  page!.innerHTML = app;
+    page!.innerHTML = app;
 }
 
 Render();
-Tippy();
+MouseHover();
