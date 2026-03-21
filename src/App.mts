@@ -13,7 +13,7 @@ function App(): string {
 
                     <ul>
                         <li id="github"><a href="https://github.com/wiktor-ww" target="_blank"> Github </a></li>
-                        <li id="Mimo"><a href="https://xf2dfx.mimo.run/" target="_blank"> Mimo.org</a></li>
+                        <li id="Mimo"><a href="https://xf2dfx.mimo.run/" target="_blank"> Mimo.org </a></li>
                     </ul>
                 </div>
                 <div class="col-span-3 mt-6 sm:mt-0 mb-6 text-pretty">

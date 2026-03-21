@@ -1,5 +1,6 @@
 import App from "./App.mts";
 import "./style.css";
+import "./fonts.css";
 
 const { default: MouseHover } = await import("./util.mts");
 
