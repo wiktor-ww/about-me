@@ -1,22 +1,33 @@
 import Render from "./render/render.mts";
-import App from "./pages/home/App.mts";
+import AppHome from "./pages/home/App.mts";
+import AppBlog from "./pages/blog/App.mts";
+import AppProjects from "./pages/projects/App.mts";
 import typewriter from "./utils/typewriter.mts";
 
 function Router() {
     let path = document.location.pathname;
+    let parts = path.split("/");
+    let base = "/" + (parts[1] || "");
+    let id = parts[2];
 
-    switch (path) {
+    switch (base) {
         case "/":
         case "/home":
-            Render(App());
-
+            Render(AppHome(path));
             const el1 = document.getElementById("Wiktor");
             if (el1) {
-              typewriter("Wiktor", el1, 320);
+                typewriter("Wiktor.", el1, 320);
             }
             break;
+
         case "/blog":
-            Render("2");
+            Render(AppBlog(path, id));
+            break;
+        case "/projects":
+            Render(AppProjects(path));
+            break;
+        case "/index.html":
+            Render("What are you looking for silly goose");
             break;
     }
 };
