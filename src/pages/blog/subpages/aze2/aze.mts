@@ -1,8 +1,6 @@
 import { marked } from "marked";
 import md from "./md/post.md?raw";
 
-
-
 const parsed = marked.parse(md)
 
 function Aze(): string {

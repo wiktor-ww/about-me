@@ -32,7 +32,7 @@ also this post will contain:
 <br>
 
 let's be honest, the old version of this website was horrible. it didn't contain
-basic features such as: [old version](https://wiktor-ww.vercel.app)
+basic features such as: [old version](https://github.com/wiktor-ww/about-me/tree/old/mirror)
 
 - list of projects
 - contact
@@ -115,8 +115,9 @@ maybe it will be more readable with arrows:
 `component → app function → router → render function → index.html`
 
 <br>
+<br>
     
-### $ render function
+## $ render function
 
 <br>
 
@@ -139,8 +140,9 @@ the function selects an `#app` element inside `index.html` and inserts the ready
 build string from a router. easy to use in other components and it's scalable
 
 <br>
+<br>
 
-### $ router function
+## $ router function
 
 <br>
 
@@ -171,32 +173,100 @@ function Router() {
 ```
 <br>
 
-as you can see the router is pretty basic, nothing special. it uses the 
-document's location path name to detect what page should be displayed and
+as you can see the router is pretty basic, nothing special. <br>
+it uses the document's location path name to detect what page should be displayed and
 every page is split into several `app` files (i mentioned them before).
 
 <br>
+    
+### issue
 
-i encountered some issues along the way doing the router. one of the issues were
-that i didn't want to have multitple cases inside the main router file, it would
-drive me crazy and also worsen the readability overall.
+my first issue was with the router file. if i'd insert every subpage
+for every post there it would make the readability worse and it
+also would drive me crazyy.
 
 <br>
+    
+so i've decided to split the page's URL into several pieces so i can pick the `id`
+for the posts and `the main directory` for the main pages.
 
-i've decided to split the page's URL into several pieces so i can pick the `id`
-for the posts and `the main directory` for the main pages. inside the 
-`AppBlog` is the next switch that is used for switching between blogs.
+<br>
+    
+### solution
+    
+my first solution was to create another **switch** inside the `AppBlog` file. <br>
+sure, it worked fine but there was one catch; if i'd create more posts <br>
+inserting them into the switch would make it unreadable. <br>
+so i decided to replace it with a new idea: use the object as a list of pages<br>
 
+<br>
+    
+```typescript
+let pageContent = articleList[id]?.() || Home();
+// this is a recreation
+```
 
+<br>
+    
+page content changes whenever id of the page you visit changes. <br>
+simple and surely better than the last idea.
+
+<br>
+    
 <br>
 <br>
 
 `AppHome(path)` → contains the main page string and as you may see it uses the
-path variable. remember that, it's gonna be important in the next function.
+path variable. remember that, it's gonna be important.
 
 <br>
     
 `AppBlog(path, id)` → works the same as function above, but do you see that `"id"`
-variable? remember that one too :)
+variable? it's used for subpages.
 
 <br>
+<br>
+
+## $ navbar function
+
+<br>
+
+a paste from the navbar function:
+
+<br>
+    
+```typescript
+const links = Links.map(l => {
+        const isActive = l.path === path;
+        const activeClass = isActive ? "activel" : "";
+
+        return `
+
+
+        <p>
+          <a href="${l.path}" class="${activeClass}">
+            ${l.title}
+          </a>
+        </p>
+        `
+    }).join("");
+
+    return /* html */`
+    <div class="max-w-3xl mx-auto">
+        <div class="flex justify-center mt-5 flex-row gap-5">
+            ${links}
+        </div>
+    </div>
+```
+
+<br>
+
+and here the **path** that we seen before comes to play. have you seen these white
+background stuff when you were **for example** on my contact page? <br>
+this is how it works behind the scenes
+
+<br>
+    
+first we create a **map** because we don't want to type everything by ourselves. <br>
+inside the map we create **constants** for better readability and agility and <br>
+we use them for checking if **path** matches with our predefined **list**.
