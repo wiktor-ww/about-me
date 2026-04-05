@@ -26,7 +26,7 @@ function App(path: string): string {
 
               <div class="projects">
                   <div class="mb-4 flex items-center">
-                      <h2 class="text-lg font-bold">projects</h2>
+                      <p class="text-lg font-bold">projects</p>
                       <div class="ml-3 h-px flex-grow bg-white/50"></div>
                   </div>
 
@@ -62,7 +62,7 @@ function App(path: string): string {
                       <div class="mb-4 py-10 flex items-center">
                           <div class="h-px flex-grow bg-white/50"></div>
                       </div>
-
+                      <p> This website has been written using only TypeScript :)
                   </div>
               </div>
           </div>

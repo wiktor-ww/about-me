@@ -4,7 +4,7 @@ type Link<T> = {
 }
 
 export const Links: Link<string>[] = [
-    { path: "/projects", title: "projects" },
+    { path: "/contact", title: "contact" },
     { path: "/home", title: "home" },
     { path: "/blog", title: "blog" }
 ]

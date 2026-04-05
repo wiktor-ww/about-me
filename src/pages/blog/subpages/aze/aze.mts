@@ -1,22 +1,26 @@
+import { marked } from "marked";
+import md from "./md/post.md?raw";
+
+
+
+const parsed = marked.parse(md)
+
 function Aze(): string {
     return /* html */`
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mx-auto">
             <div class="projects pt-10">
                 <div class="mb-4 flex items-center">
-                    <h2 class="text-lg font-bold">blog</h2>
-                    <div class="ml-3 h-px flex-grow bg-white/50"></div>
+                    <p class="text-lg font-bold">Testing some syntax</p>
+                    <div class="ml-3 h-px flex-grow bg-white/50 mr-3"></div>
+                    <p class="text-lg font-bold"><a href="/blog">Return</a></p>
                 </div>
 
                 <div class="content">
-                    <p>List of all silly blogs that i wrote <i class="text-white/50">(they contain info about my projects)</i></p>
-                    <br />
-                    <br />
                     <div class="flex flex-col">
-                        <div class="boxes-static">
-WWWWWWWWWWWWWWW
-
-                        </div>
+                        <article>
+                            ${parsed}
+                        </article>
                     </div>
 
                     <br />

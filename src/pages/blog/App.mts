@@ -1,19 +1,17 @@
 import Nav from "../../global/Nav";
 import Home from "./subpages/home.mts";
-import Aze from "./subpages/aze.mts";
+import Aze from "./subpages/aze/aze.mts";
+import Aze2 from "./subpages/aze2/aze.mts";
 
-function App(path: string, id: string): string {
-    let pageContent = "";
+const azeList = {
+    "blog": Home,
+    "post-1": Aze,
+    "post-2": Aze2,
+}
 
-    if (path) { pageContent = Home(); }
-      switch (id) {
-          case "13f":
-              pageContent = Aze();
-              break;
-          case "14f":
-              pageContent = "test";
-              break;
-      }
+function App(path: string, id: keyof typeof azeList): string {
+    let pageContent = azeList[id]?.() || Home();
+
 
     console.log("currently watching blog: \n\n" + id);
     return /* html */ `

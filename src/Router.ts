@@ -1,6 +1,7 @@
 import Render from "./render/render.mts";
 import AppHome from "./pages/home/App.mts";
 import AppBlog from "./pages/blog/App.mts";
+import AppContact from "./pages/contact/App.mts";
 import AppProjects from "./pages/projects/App.mts";
 import typewriter from "./utils/typewriter.mts";
 
@@ -16,7 +17,7 @@ function Router() {
             Render(AppHome(path));
             const el1 = document.getElementById("Wiktor");
             if (el1) {
-                typewriter("Wiktor.", el1, 320);
+                typewriter("wiktor.", el1, 320);
             }
             break;
 
@@ -26,8 +27,14 @@ function Router() {
         case "/projects":
             Render(AppProjects(path));
             break;
+        case "/contact":
+            Render(AppContact(path));
+            break;
         case "/index.html":
             Render("What are you looking for silly goose");
+            break;
+        case "/src/pages/blog/subpages/home_data/posts.yaml":
+            Router();
             break;
     }
 };

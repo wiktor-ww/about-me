@@ -7,7 +7,7 @@ function App(path: string): string {
           <div class="max-w-3xl mx-auto">
               <div class="projects pt-10">
                   <div class="mb-4 flex items-center">
-                      <h2 class="text-lg font-bold">projects</h2>
+                      <p class="text-lg font-bold">projects</p>
                       <div class="ml-3 h-px flex-grow bg-white/50"></div>
                   </div>
 
@@ -33,6 +33,11 @@ function App(path: string): string {
                               <a href="https://github.com/wiktor-ww/mag-system">Todo</a> — Simple ToDo list which uses localstorage and arrays to read and save added
                               or deleted tasks.
                               <span class="text-red-200">(Privated)</span>
+                          </li>
+                          <li>
+                              <a href="https://github.com/wiktor-ww/wiktor-bio">Wiktor-bio</a> — Simple bio website i wrote using only JavaScript. It was my first-time experimenting
+                              with JS-generated websites. It's archived but you can still read it!!!
+                              <span class="text-orange-200">(Archived)</span>
                           </li>
                       </ul>
                       <br />
