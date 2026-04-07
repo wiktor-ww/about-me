@@ -1,0 +1,86 @@
+body {
+    line-height: 1.618;
+    font-family: Intel;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    border-bottom: 1px dashed white;
+    transition: 0.5s ease-in-out;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #000000;
+    transition: 0.3s ease-in-out;
+    text-decoration: inherit;
+    background-color: white;
+    font-weight: bold;
+}
+
+::selection {
+    background-color: rgba(255, 255, 255, 1);
+    color: #000000;
+    font-weight: bold;
+}
+
+span {
+    user-select: none;
+}
+.activel {
+    background-color: white;
+    color: #000000;
+    text-decoration: inherit;
+}
+
+
+
+#blogPages {
+    li::before {
+        content: "• ";
+        color:  rgba(255, 255, 255, 0.5);
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    pre code {
+        background-color: rgba(255, 255, 255, 0.06);
+        border-radius: 10px;
+        border: 1px rgba(255, 255, 255, 0.2) solid;
+        padding: 10px;
+    }
+
+    p code {
+        background-color: rgba(255, 255, 255, 0.06);
+        padding: 5px;
+        border: 1px rgba(255, 255, 255, 0.2) solid;
+        border-radius: 10px;
+    }
+
+    code {
+        background-color: rgba(255, 255, 255, 0.06);
+        padding: 5px;
+        border: 1px rgba(255, 255, 255, 0.2) solid;
+        border-radius: 10px;
+    }
+
+    hr {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+}

@@ -1,0 +1,61 @@
+website_rewrite_project:
+  metadata:
+    author: wiktor-ww
+    last_updated: 2.04.2026
+    repo_url: "https://github.com/wiktor-ww/about-me"
+    old_version_url: "https://wiktor-ww.vercel.app"
+
+  posts:
+    - id: 1
+      title: "Rewrite of my homepage"
+      date: "2.04.2026"
+      summary: "I decided to rewrite my homepage from scratch to improve UX and features."
+      content:
+        introduction:
+          reasoning: "The old version was horrible. It lacked basic features like project lists, contact info, and links."
+          initial_plan:
+            - "Gradient buttons"
+            - "Intersection observer"
+            - "Particles and effects"
+          final_decision: "Prioritized optimization and UX over flashy effects."
+
+        tech_stack:
+          - "TailwindCSS"
+          - "TypeScript"
+          - "HTML"
+          - "CSS"
+          - "Libraries (various)"
+
+        architecture:
+          type: "SPA (Single Page Application)"
+          pattern: "String-like build"
+          flow: "component → app function → router → render function → index.html"
+
+        code_snippets:
+          render_function: |
+            function Render(ren: string) {
+                let page = document.querySelector<HTMLDivElement>("#app");
+                page!.innerHTML = ren;
+            }
+          router_function: |
+            function Router() {
+                let path = document.location.pathname;
+                let parts = path.split("/");
+                let base = "/" + (parts[1] || "");
+                let id = parts[2];
+
+                switch (base) {
+                    case "/":
+                    case "/home":
+                        Render(AppHome(path));
+                        break;
+                    case "/blog":
+                        Render(AppBlog(path, id));
+                        break;
+                }
+            }
+
+        challenges:
+          - "Handling multiple router cases"
+          - "Managing URL fragments for dynamic blog post IDs"
+          - "Scaling the string-based rendering without frameworks"

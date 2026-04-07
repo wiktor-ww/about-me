@@ -21,7 +21,7 @@ I also didn't want to use these big frameworks :)
 # Project layout
 
 ```
-wiktor-ww/wiktor-bio
+wiktor-ww/about-me
 ├── READNE.MD          - This file
 ├── index.html         - Main page file
 ├── /public            - Images
