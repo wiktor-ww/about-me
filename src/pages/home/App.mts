@@ -1,4 +1,5 @@
 import Nav from "../../global/Nav";
+import Footer from "../../global/Footer";
 const { default: html } = await import("/icons/htmldream.gif");
 const { default: loveHome } = await import("/icons/love-home.gif");
 
@@ -62,7 +63,6 @@ function App(path: string): string {
                       <div class="mb-4 py-10 flex items-center">
                           <div class="h-px flex-grow bg-white/50"></div>
                       </div>
-                      <p> This website has been written using only TypeScript :)
                   </div>
               </div>
           </div>

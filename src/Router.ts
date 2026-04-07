@@ -4,6 +4,7 @@ import AppBlog from "./pages/blog/App.mts";
 import AppContact from "./pages/contact/App.mts";
 import AppProjects from "./pages/projects/App.mts";
 import typewriter from "./utils/typewriter.mts";
+import Err from "./global/Err";
 
 function Router() {
     let path = document.location.pathname;
@@ -20,7 +21,6 @@ function Router() {
                 typewriter("wiktor.", el1, 320);
             }
             break;
-
         case "/blog":
             Render(AppBlog(path, id));
             break;
@@ -33,8 +33,8 @@ function Router() {
         case "/index.html":
             Render("What are you looking for silly goose");
             break;
-        case "/src/pages/blog/subpages/home_data/posts.yaml":
-            Router();
+        default:
+            Render(Err(path));
             break;
     }
 };

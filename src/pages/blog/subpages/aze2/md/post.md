@@ -9,15 +9,15 @@
 this post will show you how:
 
 - i wrote the homepage
-- what errors i encountered doing this (yeah, many of them)
-- what i used from my other projects etc.
+- what errors i encountered doing this (yeah, there were many)
+- what i reused from my other projects
 
 <br>
 
 also this post will contain:
 
-- paste of some code elements
-- stack of the page
+- code snippets
+- the stack i used
 - and more..
 
 <br>
@@ -31,7 +31,7 @@ also this post will contain:
 
 <br>
 
-let's be honest, the old version of this website was horrible. it didn't contain
+let's be honest, the old version of this website was horrible. it didn't include
 basic features such as: [old version](https://github.com/wiktor-ww/about-me/tree/old/mirror)
 
 - list of projects
@@ -55,11 +55,11 @@ at first i wanted my website to have:
 - gradient buttons
 - intersection observer
 - some particles
-- effects etc.
+- various effects
 
 <br>
     
-but for a long run it would look like trash. that's why i decided to prioritize
+but for a long run it would be unreadable. that's why i decided to prioritize
 optimization and UX instead.
 
 <br>
@@ -69,7 +69,7 @@ optimization and UX instead.
 
 <br>
 
-i don't know if it's just me but i don't feel like using frameworks just for 
+i don't know if it's just me but i don't feel using big frameworks just for 
 simple homepage — it's just my preference i guess. but that's not the point.
 
 <br>
@@ -80,18 +80,17 @@ for this website i used:
 - TypeScript
 - HTML
 - CSS
-- and some libraries
+- and few libraries
 
 <br>
     
-but the strong majority of the code is written using TypeScript, there's 
-almost no pure HTML written. in this post i will show you some parts of the code,
-but of course not everything because you would need to read it for
-atleast hour or more lol
+but the strong majority of the code is written in TypeScript, there's 
+almost no pure HTML. i'll show some parts of the code here,
+but not everything because going through all of it would probably take over an hour.
 
 <br>
     
-*and of course info for the nerds:* the whole website is only a single page (SPA),
+*and of course info for nerds:* the whole website is only a single page **(SPA)**,
 it means that there's only one HTML file for every page.
 
 <br>
@@ -101,14 +100,19 @@ it means that there's only one HTML file for every page.
 
 <br>
 
-1. the whole project is based on string-like build. but how does it work? every
-component or page returns a string that gets send to a router that sends it to
-a render fuction that inserts the string to `index.html`. there's also an app file
-which puts together all components into one big string that gets sent to a router.
+the whole project is based on string-based rendering. 
+
+<br>
+    
+but how does it work? every component or page returns a string, <br>
+which is then passed to a router. the router sends it to a <br>
+render fuction which injects the string into `index.html`. <br>
+there's also an app file that combines all <br> 
+components into one big string.
 
 <br>
 
-maybe it will be more readable with arrows:
+it looks like this:
 
 <br>
 
@@ -121,7 +125,7 @@ maybe it will be more readable with arrows:
 
 <br>
 
-a paste from the render function:
+render function is pretty simple:
 
 <br>
 
@@ -136,8 +140,8 @@ function Render(ren: string) {
 
 <br>
 
-the function selects an `#app` element inside `index.html` and inserts the ready 
-build string from a router. easy to use in other components and it's scalable
+the function selects the `#app` element and injects the ready <br>
+generated HTML string. simple and reusable.
 
 <br>
 <br>
@@ -146,7 +150,7 @@ build string from a router. easy to use in other components and it's scalable
 
 <br>
 
-a paste from the router function:
+the router is also pretty simple:
 
 <br>
     
@@ -173,31 +177,30 @@ function Router() {
 ```
 <br>
 
-as you can see the router is pretty basic, nothing special. <br>
-it uses the document's location path name to detect what page should be displayed and
-every page is split into several `app` files (i mentioned them before).
+it uses the document's location path name to detect what page should be rendered.
 
 <br>
     
 ### issue
 
-my first issue was with the router file. if i'd insert every subpage
-for every post there it would make the readability worse and it
-also would drive me crazyy.
+my first issue was with the router file.
 
 <br>
     
-so i've decided to split the page's URL into several pieces so i can pick the `id`
-for the posts and `the main directory` for the main pages.
+if i added every blog post directly into the main router <br>
+it would quickly become unreadable and hard to maintain (im lazy) <br>
 
 <br>
     
 ### solution
     
-my first solution was to create another **switch** inside the `AppBlog` file. <br>
+my first solution was to create another **switch** inside the `AppBlog` file.
+
+<br>
+    
 sure, it worked fine but there was one catch; if i'd create more posts <br>
-inserting them into the switch would make it unreadable. <br>
-so i decided to replace it with a new idea: use the object as a list of pages<br>
+injecting them into the switch would make it messy again. <br>
+so i decided to replace it with a new idea: using an object as a route map<br>
 
 <br>
     
@@ -231,7 +234,7 @@ variable? it's used for subpages.
 
 <br>
 
-a paste from the navbar function:
+code snippet from the navbar function:
 
 <br>
     
@@ -261,12 +264,65 @@ const links = Links.map(l => {
 
 <br>
 
-and here the **path** that we seen before comes to play. have you seen these white
-background stuff when you were **for example** on my contact page? <br>
-this is how it works behind the scenes
+and here the **path** that we seen before comes to play.
+
+<br>
+    
+have you seen these white background stuff when you were **for example** <br>
+on my contact page? this is how it works under the hood
 
 <br>
     
 first we create a **map** because we don't want to type everything by ourselves. <br>
-inside the map we create **constants** for better readability and agility and <br>
+inside the map we create **constants** for better readability and <br>
 we use them for checking if **path** matches with our predefined **list**.
+
+<br>
+
+it works as a **global component** — it means that it's used by other components.
+
+<br>
+<br>
+    
+## blog
+
+<br>
+
+as you can see there are new **subpages** unlike old version. <br>
+i will post some blogs here talking about my projects or <br>
+some websites that i'd rewrite if i maintained them. <br>
+
+<br>
+<br>
+<br>
+
+## end
+
+<br>
+
+i think that's it for this post '-'
+
+<br>
+    
+links for nerds:
+
+- [github](https://github.com/wiktor-ww)
+- [old version](https://github.com/wiktor-ww/about-me/tree/old/mirror/)
+- [new version](https://github.com/wiktor-ww/about-me/)
+- [my website](https://wiktor-ww.vercel.app/)
+
+<br>
+
+
+<!--
+code snippets sources:
+
+- [render](https://github.com/wiktor-ww/about-me/blob/055bfa736b679c79167433a95de6704149acc355/src/render/render.mts#L1-L19)
+- [router](https://github.com/wiktor-ww/about-me/blob/055bfa736b679c79167433a95de6704149acc355/src/Router.ts#L1-L62)
+- [navbar](https://github.com/wiktor-ww/about-me/blob/055bfa736b679c79167433a95de6704149acc355/src/global/Nav.ts#L1-L29)
+- [blog](https://github.com/wiktor-ww/about-me/blob/055bfa736b679c79167433a95de6704149acc355/src/pages/blog/App.mts#L13)
+ -->
+
+
+
+<br>
