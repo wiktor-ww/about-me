@@ -1,7 +1,4 @@
 import Nav from "../../global/Nav";
-import Footer from "../../global/Footer";
-const { default: html } = await import("/icons/htmldream.gif");
-const { default: loveHome } = await import("/icons/love-home.gif");
 
 function App(path: string): string {
     return /* html */ `
