@@ -6,11 +6,15 @@ import AppProjects from "./pages/projects/App.mts";
 import typewriter from "./utils/typewriter.mts";
 import Err from "./global/Err";
 
+type BlogRoutes = "blog" | "post-1" |      "post-2";
+
 function Router() {
     let path = document.location.pathname;
     let parts = path.split("/");
     let base = "/" + (parts[1] || "");
     let id = parts[2];
+
+    
 
     switch (base) {
         case "/":
@@ -22,7 +26,7 @@ function Router() {
             }
             break;
         case "/blog":
-            Render(AppBlog(path, id));
+            Render(AppBlog(path, id as BlogRoutes));
             break;
         case "/projects":
             Render(AppProjects(path));
