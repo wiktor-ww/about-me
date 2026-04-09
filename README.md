@@ -14,7 +14,6 @@ I also didn't want to use these big frameworks :)
 - **HTML** - Webpage Language (least used)
 - **CSS** - Customization Style Sheet
 - **TAILWINDCSS** - utility-first CSS framework
-- **Tippy.js** - Tooltips library for JavaScript
 
 ---
 
@@ -22,7 +21,7 @@ I also didn't want to use these big frameworks :)
 
 ```
 wiktor-ww/about-me
-├── READNE.MD          - This file
+├── README.MD          - This file
 ├── index.html         - Main page file
 ├── /public            - Images
 └── /src               - Source code
