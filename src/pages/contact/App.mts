@@ -12,13 +12,13 @@ function App(path: string): string {
                   </div>
 
                   <div class="content flex flex-col">
-                      <p class="mb-10">you can <a href="mailto:wiktorr@tuta.io" target="_blank">mail</a> me, but i prefer to use
-                      <a href="https://matrix.to/#/@wiktor.r:matrix.org" target="_blank" >matrix</a></p>
+                      <p class="mb-10">you can <a href="mailto:wiktorr@tuta.io" target="_blank" rel="noopener noreferrer">mail</a> me using <a href="/pgp">PGP</a>, but i prefer to use
+                      <a href="https://matrix.to/#/@wiktor.r:matrix.org" target="_blank" rel="noopener noreferrer">matrix</a></p>
 
                       <p class="text-[25px] font-bold mb-4"> other contacts </p>
                       <ul class="flex flex-col gap-2">
-                          <li><a href="https://bsky.app/profile/wiktor-r.bsky.social" target="_blank">bsky</a></li>
-                          <li><a href="https://github.com/wiktor-ww" target="_blank">github</a></li>
+                          <li><a href="https://bsky.app/profile/wiktor-r.bsky.social" target="_blank" rel="noopener noreferrer">bsky</a></li>
+                          <li><a href="https://github.com/wiktor-ww" target="_blank" rel="noopener noreferrer">github</a></li>
 
 
                       </ul>

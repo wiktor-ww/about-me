@@ -39,6 +39,11 @@ function App(path: string): string {
                               with JS-generated websites. It's archived but you can still read it!!!
                               <span class="text-orange-200">(Archived)</span>
                           </li>
+                          <li>
+                              <a href="https://github.com/wiktor-ww/blog-posts">blog-posts</a> — My personal blog website where i write some blogs that don't show up
+                              here, it's blazing and written in Python.
+                              <span class="text-red-200">(Privated)</span>
+                          </li>
                       </ul>
                       <br />
 

@@ -3,6 +3,7 @@ import AppHome from "./pages/home/App.mts";
 import AppBlog from "./pages/blog/App.mts";
 import AppContact from "./pages/contact/App.mts";
 import AppProjects from "./pages/projects/App.mts";
+import Pgp from "./pages/contact/PGP.mts";
 import typewriter from "./utils/typewriter.mts";
 import Err from "./global/Err";
 
@@ -14,7 +15,7 @@ function Router() {
     let base = "/" + (parts[1] || "");
     let id = parts[2];
 
-    
+
 
     switch (base) {
         case "/":
@@ -36,6 +37,9 @@ function Router() {
             break;
         case "/index.html":
             Render("What are you looking for silly goose");
+            break;
+        case "/pgp":
+            Render(Pgp());
             break;
         default:
             Render(Err(path));

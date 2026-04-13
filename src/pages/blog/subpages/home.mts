@@ -21,7 +21,7 @@ function Home(): string {
                 <div class="mb-4 flex items-center justify-between">
                     <p class="text-lg font-bold">blog</p>
                     <div class="ml-3 mr-3 h-px flex-grow bg-white/50"></div>
-                    <p> <a href="/src/pages/blog/subpages/home_data/posts.yaml">yaml</a> </p>
+                    <p> <a href="https://wiktor-b.vercel.app/home">read more</a> </p>
                 </div>
 
                 <div class="content">
