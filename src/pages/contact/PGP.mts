@@ -1,4 +1,4 @@
-function Pgp(path: string): string {
+function Pgp(): string {
     return /* html */ `
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
           <div class="max-w-xl mx-auto">

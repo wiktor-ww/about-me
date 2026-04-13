@@ -7,7 +7,7 @@ import Pgp from "./pages/contact/PGP.mts";
 import typewriter from "./utils/typewriter.mts";
 import Err from "./global/Err";
 
-type BlogRoutes = "blog" | "post-1" |      "post-2";
+type BlogRoutes = "blog" | "post-1" | "post-2";
 
 function Router() {
     let path = document.location.pathname;
